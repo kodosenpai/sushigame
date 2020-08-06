@@ -1,3 +1,15 @@
+# Sushi Game!
+
+## Live on Netlify
+
+https://admiring-swartz-71edc4.netlify.app/
+
+## About
+
+Just a lil game where you generate a sushi order and you have to fulfill it with ingredients and stuff
+
+# Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
