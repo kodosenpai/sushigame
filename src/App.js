@@ -1,36 +1,7 @@
 import React, { useState } from 'react';
 import { random, sample, xor } from 'lodash';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-
-const california = ['rice', 'nori', 'crab', 'avocado', 'cucumber'];
-const salmon = ['rice', 'nori', 'creamCheese', 'salmon'];
-const tuna = ['rice', 'nori', 'tuna'];
-const takoyaki = ['flour', 'squid', 'mayo', 'sauce'];
-
-const ingredients = [
-  'rice',
-  'nori',
-  'crab',
-  'avocado',
-  'cucumber',
-  'creamCheese',
-  'salmon',
-  'tuna',
-  'flour',
-  'squid',
-  'mayo',
-  'sauce',
-];
-
-const menu = {
-  california,
-  salmon,
-  tuna,
-  takoyaki,
-};
+import { menu, ingredients } from './constants';
+import { AppView } from './App.view';
 
 const App = () => {
   const [currentOrder, setCurrentorder] = useState([]);
@@ -97,94 +68,21 @@ const App = () => {
     setBentoBox(filteredBentoBox);
   };
 
-  return (
-    <Container>
-      <br />
-      <Row>
-        <Col>
-          <Button variant="primary" onClick={onGenerateOrder}>
-            Generate Order [{successfulOrders}]
-          </Button>
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col>
-          <h1>Current Order</h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          {currentOrder.map((roll) => (
-            <div>{`🍣 ${roll}`}</div>
-          ))}
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col>
-          <h1>Kitchen</h1>
-        </Col>
-      </Row>
-      <Row>
-        {ingredients.map((ingredient) => (
-          <Col>
-            <Button
-              variant="secondary"
-              onClick={() => onIngredientClick(ingredient)}
-            >
-              {ingredient}
-            </Button>
-          </Col>
-        ))}
-      </Row>
-      <br />
-      <Row>
-        <Col>
-          <Button variant="danger" onClick={onClearIngredients}>
-            Clear Ingredients
-          </Button>
-        </Col>
-        <Col>
-          <Button variant="success" onClick={onRoll}>
-            Roll it!
-          </Button>
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col>
-          {currentIngredients.map((ingredient) => (
-            <div>{ingredient}</div>
-          ))}
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col>
-          <h1>Bento Box</h1>
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col>
-          {bentoBox.map((roll, index) => (
-            <div onClick={() => onRemoveRoll(index)}>{`🍣 ${roll}`}</div>
-          ))}
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col>
-          {
-            <Button variant="success" onClick={onShip}>
-              {'Ship it! 🚚'}
-            </Button>
-          }
-        </Col>
-      </Row>
-    </Container>
-  );
+  const AppViewProps = {
+    onGenerateOrder,
+    successfulOrders,
+    currentOrder,
+    ingredients,
+    onIngredientClick,
+    onClearIngredients,
+    onRoll,
+    currentIngredients,
+    bentoBox,
+    onRemoveRoll,
+    onShip,
+  };
+
+  return <AppView {...AppViewProps} />;
 };
 
 export default App;
