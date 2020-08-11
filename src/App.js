@@ -4,27 +4,9 @@ import { menu, ingredients } from './constants';
 import { AppView } from './App.view';
 
 const App = () => {
-  const [currentOrder, setCurrentorder] = useState([
-    'california',
-    'salmon',
-    'tuna',
-    'tuna',
-    'tuna',
-    'tuna',
-    'tuna',
-    'tuna',
-  ]);
+  const [currentOrder, setCurrentorder] = useState([]);
   const [currentIngredients, setCurrentIngredients] = useState([]);
-  const [bentoBox, setBentoBox] = useState([
-    'california',
-    'salmon',
-    'tuna',
-    'tuna',
-    'tuna',
-    'tuna',
-    'tuna',
-    'tuna',
-  ]);
+  const [bentoBox, setBentoBox] = useState([]);
   const [successfulOrders, setSuccessfulOrders] = useState(0);
 
   const onGenerateOrder = () => {
