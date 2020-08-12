@@ -8,6 +8,11 @@ https://admiring-swartz-71edc4.netlify.app/
 
 Just a lil game where you generate a sushi order and you have to fulfill it with ingredients and stuff
 
+## Cool feature ideas
+
+- You can run out of ingredients
+- You have to order more ingredients with delivery boy
+
 # Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

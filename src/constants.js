@@ -12,15 +12,14 @@ export const ingredients = [
   'creamCheese',
   'salmon',
   'tuna',
-  'flour',
-  'squid',
-  'mayo',
-  'sauce',
+  // 'flour',
+  // 'squid',
+  // 'mayo',
+  // 'sauce',
 ];
 
 export const menu = {
   california,
   salmon,
   tuna,
-  takoyaki,
 };
