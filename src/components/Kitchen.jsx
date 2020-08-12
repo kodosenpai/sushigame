@@ -77,9 +77,9 @@ const Creamcheese = styled(Ingredient)`
   background-image: none;
 `;
 
-const Label = styled.div`
-  background-color: #ddd;
-`;
+// const Label = styled.div`
+//   background-color: #ddd;
+// `;
 
 // 'rice',
 //   'nori',
